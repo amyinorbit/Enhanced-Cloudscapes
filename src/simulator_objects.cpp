@@ -54,7 +54,7 @@ namespace simulator_objects
 
 	XPLMDataRef fade_start_distance_dataref;
 	XPLMDataRef fade_end_distance_dataref;
-	
+
 	XPLMDataRef sun_pitch_dataref;
 	XPLMDataRef sun_heading_dataref;
 
@@ -107,7 +107,7 @@ namespace simulator_objects
 
 	float cloud_bases[CLOUD_LAYER_COUNT];
 	float cloud_tops[CLOUD_LAYER_COUNT];
-	
+
 	float cloud_coverages[CLOUD_TYPE_COUNT];
 	float cloud_densities[CLOUD_TYPE_COUNT];
 
@@ -149,7 +149,7 @@ namespace simulator_objects
 		viewport_dataref = XPLMFindDataRef("sim/graphics/view/viewport");
 		current_eye_dataref = XPLMFindDataRef("sim/graphics/view/draw_call_type");
 
-		rendering_resolution_ratio_dataref = export_float_dataref("enhanced_cloudscapes/rendering_resolution_ratio", 0.6);
+		rendering_resolution_ratio_dataref = export_float_dataref("enhanced_cloudscapes/rendering_resolution_ratio", 1.0);
 		skip_fragments_dataref = export_int_dataref("enhanced_cloudscapes/skip_fragments", 0);
 
 		reverse_z_dataref = XPLMFindDataRef("sim/graphics/view/is_reverse_float_z");
@@ -285,7 +285,7 @@ namespace simulator_objects
 		detail_noise_scale = XPLMGetDataf(detail_noise_scale_dataref);
 
 		blue_noise_scale = XPLMGetDataf(blue_noise_scale_dataref);
-		
+
 		for (int layer_index = 0; layer_index < CLOUD_LAYER_COUNT; layer_index++) cloud_types[layer_index] = XPLMGetDatai(cloud_type_datarefs[layer_index]);
 
 		for (int layer_index = 0; layer_index < CLOUD_LAYER_COUNT; layer_index++)

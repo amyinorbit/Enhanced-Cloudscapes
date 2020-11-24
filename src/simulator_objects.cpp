@@ -67,11 +67,8 @@ namespace simulator_objects
 	XPLMDataRef fade_start_distance_dataref;
 	XPLMDataRef fade_end_distance_dataref;
 
-<<<<<<< HEAD
-=======
 	XPLMDataRef light_attenuation_dataref;
-	
->>>>>>> 22f6ae8cec135345d81ca67513366c2e45f806fa
+
 	XPLMDataRef sun_pitch_dataref;
 	XPLMDataRef sun_heading_dataref;
 
@@ -119,7 +116,7 @@ namespace simulator_objects
 
 	float maximum_sample_step_size;
 	float maximum_sun_step_size;
-	
+
 	int use_blue_noise_dithering;
 
 	float cloud_map_scale;
@@ -350,13 +347,8 @@ namespace simulator_objects
 		detail_noise_scale = XPLMGetDataf(detail_noise_scale_dataref);
 
 		blue_noise_scale = XPLMGetDataf(blue_noise_scale_dataref);
-<<<<<<< HEAD
 
-		for (int layer_index = 0; layer_index < CLOUD_LAYER_COUNT; layer_index++) cloud_types[layer_index] = XPLMGetDatai(cloud_type_datarefs[layer_index]);
-=======
-		
 		for (int layer_index = 0; layer_index < CLOUD_LAYER_COUNT; layer_index++) cloud_types[layer_index] = static_cast<int>(XPLMGetDataf(cloud_type_datarefs[layer_index]));
->>>>>>> 22f6ae8cec135345d81ca67513366c2e45f806fa
 
 		for (int layer_index = 0; layer_index < CLOUD_LAYER_COUNT; layer_index++)
 		{
